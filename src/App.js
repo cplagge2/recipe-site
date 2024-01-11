@@ -10,18 +10,20 @@ import SweetsPage from './screens/SweetsPage';
 import SidesPage from './screens/SidesPage';
 import AddRecipe from './screens/AddRecipe';
 import RecipePage from './screens/RecipePage';
+import UpdateRecipe from './screens/UpdateRecipe';
 
 function App() {
   return (
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<RecipeSite />}>
-        {/*<Route index element={<HomePage />} />*/}
+        <Route index element={<HomePage />} />
         <Route path="appetizers" element={<RecipePage type={'Appetizer'}/>} />
         <Route path="entrees" element={<RecipePage type={'Entree'}/>} />
         <Route path="sweets" element={<RecipePage type={'Sweet'}/>} />
         <Route path="side-dishes" element={<RecipePage type={'Side'}/>} />
         <Route path="add-recipe" element={<AddRecipe />} />
+        <Route path="update-recipe" element={<UpdateRecipe />} />
         <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>

@@ -22,6 +22,7 @@ const RecipePage = (props) => {
     return <div>
         <Form.Label htmlFor="search-bar">Search</Form.Label>
         <Form.Control id="search-bar" value={search} onChange={(e) => setSearch(e.target.value)}></Form.Control>
+        <br/>
         {
         shown.length > 0 ?
             shown.map((recipe) => {

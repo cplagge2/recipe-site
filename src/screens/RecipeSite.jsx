@@ -42,6 +42,7 @@ const RecipeSite = (props) => {
                     <Nav.Link as={Link} to="/entrees">Entrees</Nav.Link>
                     <Nav.Link as={Link} to="/sweets">Sweets</Nav.Link>
                     <Nav.Link as={Link} to="/add-recipe">New Recipe</Nav.Link>
+                    <Nav.Link as={Link} to="/update-recipe">Update Recipe</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
