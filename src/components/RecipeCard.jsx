@@ -28,7 +28,7 @@ const RecipeCard = (props) => {
                     <h1>{props.recipeName}</h1>
                 </Col>
                 <Col xs sm md lg xl = {2} style={{display:'flex', justifyContent:'right'}}>
-                    <Button onClick = {deleteRecipe} style={{backgroundColor:"blue"}}>Delete Recipe</Button>
+                    <Button onClick = {deleteRecipe} style={{backgroundColor:"red", borderColor:"black"}}>Delete Recipe</Button>
                 </Col>
             </Row>
             <h3>Ingredients</h3>
