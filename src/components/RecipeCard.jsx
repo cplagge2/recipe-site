@@ -1,4 +1,4 @@
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Row, Col } from "react-bootstrap";
 import { useContext } from "react";
 import DataContext from "../contexts/DataContext";
 
@@ -6,7 +6,7 @@ const RecipeCard = (props) => {
 
     const [recipes, setRecipes] = useContext(DataContext);
 
-    const updateFavorite = ()=>{
+    const deleteRecipe = ()=>{
         fetch(`https://324t9imtmd.execute-api.us-east-2.amazonaws.com/default/recipes/${props.recipeID}`, {
             method: "DELETE"
         }).then(resp => {
@@ -23,7 +23,14 @@ const RecipeCard = (props) => {
     return <Card>
         {
             <>
-            <h1>{props.recipeName}</h1>
+            <Row>
+                <Col>
+                    <h1>{props.recipeName}</h1>
+                </Col>
+                <Col xs sm md lg xl = {2} style={{display:'flex', justifyContent:'right'}}>
+                    <Button onClick = {deleteRecipe} style={{backgroundColor:"blue"}}>Delete Recipe</Button>
+                </Col>
+            </Row>
             <h3>Ingredients</h3>
             <ul>
             {
@@ -36,7 +43,6 @@ const RecipeCard = (props) => {
                 props.directions.split(";").map((ingredient, index) => <li key={index}>{ingredient.trim()}</li>)
             }
             </ol>
-            <Button onClick = {updateFavorite} style={{backgroundColor:"blue"}}>Delete Recipe</Button>
             </>
         }
     </Card>

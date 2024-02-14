@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import AppetizersPage from './screens/AppetizersPage';
 import RecipeSite from './screens/RecipeSite';
 import HomePage from './screens/HomePage';
@@ -14,20 +14,20 @@ import UpdateRecipe from './screens/UpdateRecipe';
 
 function App() {
   return (
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
       <Route path="/" element={<RecipeSite />}>
         <Route index element={<HomePage />} />
-        <Route path="appetizers" element={<RecipePage type={'Appetizer'}/>} />
-        <Route path="entrees" element={<RecipePage type={'Entree'}/>} />
-        <Route path="sweets" element={<RecipePage type={'Sweet'}/>} />
-        <Route path="side-dishes" element={<RecipePage type={'Side'}/>} />
-        <Route path="add-recipe" element={<AddRecipe />} />
-        <Route path="update-recipe" element={<UpdateRecipe />} />
+        <Route path="/appetizers" element={<RecipePage type={'Appetizer'}/>} />
+        <Route path="/entrees" element={<RecipePage type={'Entree'}/>} />
+        <Route path="/sweets" element={<RecipePage type={'Sweet'}/>} />
+        <Route path="/side-dishes" element={<RecipePage type={'Side'}/>} />
+        <Route path="/add-recipe" element={<AddRecipe />} />
+        <Route path="/update-recipe" element={<UpdateRecipe />} />
         <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
   );
 }
 
