@@ -19,8 +19,6 @@ const RecipeSite = (props) => {
                 respArray.push(resp[recipeIndex])
             })
             setRecipes(respArray);
-            console.log("FETCHING");
-            console.log(respArray);
         })
     }
 

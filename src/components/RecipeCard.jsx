@@ -20,7 +20,7 @@ const RecipeCard = (props) => {
     }
 
 
-    return <Card>
+    return <Card className="mb-2">
         {
             <>
             <Row>

@@ -26,7 +26,6 @@ const RecipePage = (props) => {
         {
         shown.length > 0 ?
             shown.map((recipe) => {
-                //console.log(recipe)
                 return <RecipeCard key={recipe.recipeID} recipeID={recipe.recipeID} recipeName={recipe.recipeName} ingredients={recipe.ingredients} directions={recipe.directions}/>
             })
         : <h2>No Recipes In This Category</h2>
