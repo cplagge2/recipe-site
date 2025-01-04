@@ -19,8 +19,8 @@ const RecipePage = (props) => {
         setShown(valid.filter((recipe) => recipe.recipeName.toLowerCase().includes(search.toLowerCase())))
     }, [search,valid])
 
-    return <div>
-        <Form.Label htmlFor="search-bar">Search</Form.Label>
+    return <>
+        <Form.Label htmlFor="search-bar" id="search-bar-header">Search</Form.Label>
         <Form.Control id="search-bar" value={search} onChange={(e) => setSearch(e.target.value)}></Form.Control>
         <br/>
         {
@@ -31,7 +31,7 @@ const RecipePage = (props) => {
         : <h2>No Recipes In This Category</h2>
         }
 
-    </div>
+    </>
 }
 
 export default RecipePage;

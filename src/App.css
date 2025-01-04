@@ -28,11 +28,19 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#recipe-card {
+  border: 3px solid black !important;
+  margin-bottom: 20px;
+}
+
+#card-content {
+  margin: 7px;
+}
+
+#search-bar {
+  border: 2px solid black !important;
+}
+
+#search-bar-header {
+  font-size: x-large;
 }

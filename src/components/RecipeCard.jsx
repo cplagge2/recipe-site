@@ -20,30 +20,30 @@ const RecipeCard = (props) => {
     }
 
 
-    return <Card className="mb-2">
+    return <Card id="recipe-card">
         {
-            <>
-            <Row>
-                <Col>
-                    <h1>{props.recipeName}</h1>
-                </Col>
-                <Col xs sm md lg xl = {2} style={{display:'flex', justifyContent:'right'}}>
-                    <Button onClick = {deleteRecipe} style={{backgroundColor:"red", borderColor:"black"}}>Delete Recipe</Button>
-                </Col>
-            </Row>
-            <h3>Ingredients</h3>
-            <ul>
-            {
-                props.ingredients.split(";").map((ingredient, index) => <li key={index}>{ingredient.trim()}</li>)
-            }
-            </ul>
-            <h3>Directions</h3>
-            <ol>
-            {
-                props.directions.split(";").map((ingredient, index) => <li key={index}>{ingredient.trim()}</li>)
-            }
-            </ol>
-            </>
+            <div id="card-content">
+                <Row>
+                    <Col>
+                        <h1>{props.recipeName}</h1>
+                    </Col>
+                    <Col xs sm md lg xl = {2} style={{display:'flex', justifyContent:'right'}}>
+                        <Button onClick = {deleteRecipe} style={{backgroundColor:"red", borderColor:"black"}}>Delete Recipe</Button>
+                    </Col>
+                </Row>
+                <h3>Ingredients</h3>
+                <ul>
+                {
+                    props.ingredients.split(";").map((ingredient, index) => <li key={index}>{ingredient.trim()}</li>)
+                }
+                </ul>
+                <h3>Directions</h3>
+                <ol>
+                {
+                    props.directions.split(";").map((ingredient, index) => <li key={index}>{ingredient.trim()}</li>)
+                }
+                </ol>
+            </div>
         }
     </Card>
 }
