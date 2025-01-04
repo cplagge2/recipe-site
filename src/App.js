@@ -1,13 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router';
 import { HashRouter } from 'react-router-dom';
-import AppetizersPage from './screens/AppetizersPage';
 import RecipeSite from './screens/RecipeSite';
 import HomePage from './screens/HomePage';
-import EntreesPage from './screens/EntreesPage';
-import SweetsPage from './screens/SweetsPage';
-import SidesPage from './screens/SidesPage';
 import AddRecipe from './screens/AddRecipe';
 import RecipePage from './screens/RecipePage';
 import UpdateRecipe from './screens/UpdateRecipe';
