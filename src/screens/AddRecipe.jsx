@@ -29,6 +29,7 @@ export default function AddRecipe(props) {
                 })})
             .then((resp) => {
                 if(resp.status === 200){
+                    alert("Recipe added")
                     return resp.json()
                 }
                 else{
@@ -47,6 +48,7 @@ export default function AddRecipe(props) {
                     setName("");
                     setIngredients("");
                     setSteps("");
+
                 }
             );
     } 
