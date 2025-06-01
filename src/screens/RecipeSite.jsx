@@ -1,3 +1,4 @@
+import './css/Screen.css';
 import { useState, useEffect, useRef } from "react";
 import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import { Link, Outlet } from "react-router-dom";
@@ -30,7 +31,7 @@ const RecipeSite = (props) => {
     }, [])
 
 
-    return <div>
+    return <div className="site-wrapper">
         {
         window.innerWidth > 800 ?
         <Navbar bg="dark" variant="dark" style={{fontFamily:'initial'}}>
@@ -41,6 +42,7 @@ const RecipeSite = (props) => {
                     <Nav.Link as={Link} to="side-dishes">Side Dishes</Nav.Link>
                     <Nav.Link as={Link} to="entrees">Entrees</Nav.Link>
                     <Nav.Link as={Link} to="sweets">Sweets</Nav.Link>
+                    <Nav.Link as={Link} to="drinks">Drinks</Nav.Link>
                     <Nav.Link as={Link} to="add-recipe">New Recipe</Nav.Link>
                     <Nav.Link as={Link} to="update-recipe">Update Recipe</Nav.Link>
                 </Nav>
@@ -56,6 +58,7 @@ const RecipeSite = (props) => {
                         <NavDropdown.Item href="#/side-dishes">Side Dishes</NavDropdown.Item>
                         <NavDropdown.Item href="#/entrees">Entrees</NavDropdown.Item>
                         <NavDropdown.Item href="#/sweets">Sweets</NavDropdown.Item>
+                        <NavDropdown.Item href="#/drinks">Drinks</NavDropdown.Item>
                     </NavDropdown>
                     <NavDropdown title="Edit Recipes">
                         <NavDropdown.Item href="#/add-recipe">New Recipe</NavDropdown.Item>
@@ -65,7 +68,7 @@ const RecipeSite = (props) => {
             </Container>
         </Navbar>
         }
-        <div style={{margin: "1rem"}}>
+        <div className='main-page'>
             <DataContext.Provider value={[recipeList, setRecipes]}>
                 <Outlet/>
             </DataContext.Provider>

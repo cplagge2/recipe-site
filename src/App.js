@@ -17,6 +17,7 @@ function App() {
         <Route path="/entrees" element={<RecipePage type={'Entree'}/>} />
         <Route path="/sweets" element={<RecipePage type={'Sweet'}/>} />
         <Route path="/side-dishes" element={<RecipePage type={'Side Dish'}/>} />
+        <Route path="/drinks" element={<RecipePage type={'Drink'}/>} />
         <Route path="/add-recipe" element={<AddRecipe />} />
         <Route path="/update-recipe" element={<UpdateRecipe />} />
         <Route path="*" element={<HomePage />} />

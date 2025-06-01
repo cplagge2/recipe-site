@@ -1,0 +1,21 @@
+.recipe-page {
+    background-color: white;
+    min-height: 100vh;
+    border-bottom: 1px solid transparent;
+    margin: 1rem;
+}
+
+.main-page {
+    margin: 1rem;
+    background-color: white;
+}
+
+.site-wrapper {
+    background-color: white;
+    margin: 0;       /* Ensure no margin around the wrapper */
+    padding: 0;      /* Remove padding, if any */
+    height: 100%;    /* Make sure it doesn't extend beyond the viewport */
+    width: 100%;     /* Ensure it spans the full width */
+    display: flex;   /* If you want to control layout or stack content */
+    flex-direction: column; 
+}

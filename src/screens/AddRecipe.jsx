@@ -66,6 +66,7 @@ export default function AddRecipe(props) {
                 <option>Side Dish</option>
                 <option>Entree</option>
                 <option>Sweet</option>
+                <option>Drink</option>
             </Form.Select>
             <Form.Label htmlFor="recipeName">Name</Form.Label>
             <Form.Control id="recipeName" value={name} onChange={(e) => setName(e.target.value)}></Form.Control>

@@ -1,12 +1,12 @@
 import { Card, Button, Row, Col } from "react-bootstrap";
-import { useContext, useState } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import DataContext from "../contexts/DataContext";
 
 const RecipeCard = (props) => {
 
     const [recipes, setRecipes] = useContext(DataContext);
-
     const [deleteable, setDeletable] = useState(false);
+    const buttonRef = useRef(null);
 
     const deleteRecipe = ()=>{
         if (!deleteable) {
@@ -26,6 +26,20 @@ const RecipeCard = (props) => {
         }
     }
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+          if (buttonRef.current && !buttonRef.current.contains(event.target)) {
+            setDeletable(false);
+          }
+        };
+    
+        document.addEventListener('click', handleClickOutside);
+    
+        return () => {
+          document.removeEventListener('click', handleClickOutside);
+        };
+      }, []);
+
 
     return <Card id="recipe-card">
         {
@@ -35,7 +49,11 @@ const RecipeCard = (props) => {
                         <h1>{props.recipeName}</h1>
                     </Col>
                     <Col xs sm md lg xl = {2} style={{display:'flex', justifyContent:'right'}}>
-                        <Button onClick = {deleteRecipe} style={{backgroundColor:"red", borderColor:"black"}}>{deleteable ? 'Are you sure?' : 'Delete Recipe'}</Button>
+                        <Button
+                            ref={buttonRef} 
+                            onClick = {deleteRecipe} 
+                            style={{backgroundColor:"red", borderColor:"black"}}>
+                                {deleteable ? 'Are you sure?' : 'Delete Recipe'}</Button>
                     </Col>
                 </Row>
                 <h3>Ingredients</h3>
