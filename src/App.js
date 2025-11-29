@@ -6,6 +6,7 @@ import HomePage from './screens/HomePage';
 import AddRecipe from './screens/AddRecipe';
 import RecipePage from './screens/RecipePage';
 import UpdateRecipe from './screens/UpdateRecipe';
+import DeleteRecipe from './screens/DeleteRecipe';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/drinks" element={<RecipePage type={'Drink'}/>} />
         <Route path="/add-recipe" element={<AddRecipe />} />
         <Route path="/update-recipe" element={<UpdateRecipe />} />
+        <Route path="/delete-recipe" element={<DeleteRecipe />} />
         <Route path="*" element={<HomePage />} />
       </Route>
     </Routes>

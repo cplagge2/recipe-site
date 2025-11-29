@@ -1,61 +1,11 @@
-import { Card, Button, Row, Col } from "react-bootstrap";
-import { useContext, useState, useRef, useEffect } from "react";
-import DataContext from "../contexts/DataContext";
+import { Card } from "react-bootstrap";
 
 const RecipeCard = (props) => {
-
-    const [recipes, setRecipes] = useContext(DataContext);
-    const [deleteable, setDeletable] = useState(false);
-    const buttonRef = useRef(null);
-
-    const deleteRecipe = ()=>{
-        if (!deleteable) {
-            setDeletable(true);
-        }
-        else {
-            fetch(`https://324t9imtmd.execute-api.us-east-2.amazonaws.com/default/recipes/${props.recipeID}`, {
-                method: "DELETE"
-            }).then(resp => {
-                if(resp.status === 200){
-                    setRecipes(recipes.filter((r) => r.recipeID !== props.recipeID))
-                }
-                else{
-                    alert("Could not delete");
-                }
-            })
-        }
-    }
-
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-          if (buttonRef.current && !buttonRef.current.contains(event.target)) {
-            setDeletable(false);
-          }
-        };
-    
-        document.addEventListener('click', handleClickOutside);
-    
-        return () => {
-          document.removeEventListener('click', handleClickOutside);
-        };
-      }, []);
-
 
     return <Card id="recipe-card">
         {
             <div id="card-content">
-                <Row>
-                    <Col>
-                        <h1>{props.recipeName}</h1>
-                    </Col>
-                    <Col xs sm md lg xl = {2} style={{display:'flex', justifyContent:'right'}}>
-                        <Button
-                            ref={buttonRef} 
-                            onClick = {deleteRecipe} 
-                            style={{backgroundColor:"red", borderColor:"black"}}>
-                                {deleteable ? 'Are you sure?' : 'Delete Recipe'}</Button>
-                    </Col>
-                </Row>
+                <h1>{props.recipeName}</h1>
                 <h3>Ingredients</h3>
                 <ul>
                 {

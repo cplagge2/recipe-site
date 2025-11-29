@@ -45,6 +45,7 @@ const RecipeSite = (props) => {
                     <Nav.Link as={Link} to="drinks">Drinks</Nav.Link>
                     <Nav.Link as={Link} to="add-recipe">New Recipe</Nav.Link>
                     <Nav.Link as={Link} to="update-recipe">Update Recipe</Nav.Link>
+                    <Nav.Link as={Link} to="delete-recipe">Delete Recipe</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
@@ -63,6 +64,7 @@ const RecipeSite = (props) => {
                     <NavDropdown title="Edit Recipes">
                         <NavDropdown.Item href="#/add-recipe">New Recipe</NavDropdown.Item>
                         <NavDropdown.Item href="#/update-recipe">Update Recipe</NavDropdown.Item>
+                        <NavDropdown.Item href="#/delete-recipe">Delete Recipe</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
             </Container>
